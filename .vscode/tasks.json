@@ -1,0 +1,57 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build AudioVisualizer",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g", // For debugging
+
+                // --- Source Files ---
+                "${workspaceFolder}/main.cpp",
+                "${workspaceFolder}/imgui/imgui.cpp",
+                "${workspaceFolder}/imgui/imgui_draw.cpp",
+                "${workspaceFolder}/imgui/imgui_widgets.cpp",
+                "${workspaceFolder}/imgui/imgui_tables.cpp",
+                "${workspaceFolder}/imgui-sfml/imgui-SFML.cpp",
+
+                // --- Output Executable ---
+                "-o",
+                "${workspaceFolder}/AudioVisualizer.exe",
+
+                // --- Include Directories for Headers ---
+                "-I${workspaceFolder}/imgui",
+                "-I${workspaceFolder}/imgui-sfml",
+
+                // --- Library Search Path ---
+                "-LC:/msys64/mingw64/lib", // Adjust if your MSYS2 path is different
+
+                // --- Libraries to Link ---
+                "-lsfml-graphics",
+                "-lsfml-window",
+                "-lsfml-audio",
+                "-lsfml-system",
+
+                // OpenGL Librar
+                "-lopengl32",
+
+                // Other common Windows system libraries SFML might implicitly need
+                "-lGdi32",
+                "-lws2_32",
+
+                // Other project-specific libraries
+                "-lportaudio", // PortAudio Library
+                "-lfftw3"      // FFTW Library
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Compiler: g++"
+        }
+    ]
+}
