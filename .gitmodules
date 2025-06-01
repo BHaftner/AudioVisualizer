@@ -4,3 +4,5 @@
 [submodule "imgui-sfml"]
 	path = imgui-sfml
 	url = https://github.com/sfml/imgui-sfml.git
+[submodule "lib/imgui-sfml"]
+	branch = 2.6.x
