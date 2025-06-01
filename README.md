@@ -22,9 +22,9 @@ Before you begin, make sure you have these libraries:
 * **Fastest Fourier Transform in the West**
 
 I installed PortAudio, FFTW, and SFML using MSYS2 commands below,
-**PortAudio** pacman -S mingw-w64-x86_64-portaudio
-**FFTW** pacman -S mingw-w64-x86_64-fftw
-**SFML** pacman -S mingw-w64-x86_64-sfml
+* **PortAudio** pacman -S mingw-w64-x86_64-portaudio
+* **FFTW** pacman -S mingw-w64-x86_64-fftw
+* **SFML** pacman -S mingw-w64-x86_64-sfml
 
 The imgui and imgui-sfml libraries should install correctly as github submodules.
 
@@ -37,6 +37,7 @@ The imgui and imgui-sfml libraries should install correctly as github submodules
     ```
 
 2.  **Compile**
+
     For compilation feel free to use my tasks.json in the .vscode file if using vs. Otherwise here is the terminal command,
     ```bash
     g++ -g main.cpp imgui/imgui.cpp imgui/imgui_draw.cpp imgui/imgui_widgets.cpp imgui/imgui_tables.cpp imgui-sfml/imgui-SFML.cpp -o AudioVisualizer.exe -Iimgui -Iimgui-sfml -LC:/msys64/mingw64/lib -lsfml-graphics -lsfml-window -lsfml-audio -lsfml-system -lopengl32 -lGdi32 -lws2_32 -lportaudio -lfftw3
